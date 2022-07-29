@@ -1,4 +1,4 @@
-const modalContenedor = document.querySelector('.modal-container');
+const modalContenedor = document.querySelector('.modal-contenedor');
 
 const abrirCarrito = document.getElementById('open')
 
