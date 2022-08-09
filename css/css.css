@@ -67,6 +67,60 @@ section {
         "footer";
 }
 
+.modal{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #b3adcd88;
+    display: flex;
+    opacity: 0;
+    pointer-events: none;   
+    transition: opacity .6s .9s;
+    --transform: translateY(-100vh);
+    --transition: transform .8s;
+}
+
+.modal_container{
+    margin: auto;
+    width: 100%;
+    max-width: 700px;
+    max-height: 90%;
+    border-radius: 6px;
+    padding: 2rem 3rem;
+    display: grid;
+    gap: 1rem;
+    place-items: center;
+    position: relative;
+    transform: var(--transform);
+    transition: var(--transition);
+}
+
+.modal-show{
+    opacity: 1;
+    pointer-events: unset;
+    transition: opacity .6s;
+    --transform: translateY(0);
+    --transition: transform .8s .8s;
+}
+
+#close{
+    position: absolute;
+    top: 150px;
+    right: 130px;
+    padding: 2px 2px;
+    border: 1px solid;
+    border-radius: 7px;
+    font-size: 20px;
+    cursor:pointer;
+}
+
+#close:hover{
+    color: #fff;
+    background-color: #7763d1;
+}
+
 form {
     color: #3e1dd1;
     margin-top: 20%;
@@ -76,27 +130,30 @@ form {
     background-color: #fff;
     box-shadow: 1px 1px 10px rgb(0, 0, 0, 20%);
     font-family: 'Mada', sans-serif;
+    font-size: 1.4rem;
     place-items: center;
     text-align: center;
 
 }
 
 form h1 {
-    font-size: 4em;
+    font-size: 3.8rem;
+    padding: 1rem;
 }
 
 .medio {
-    align-items: center;
+    text-align: center;
     width: 50%;
 }
 
 .completo {
     align-items: center;
-    width: 30%;
+    width: 65%;
 }
 
 .completo input {
     width: 100%;
+    text-align: center;
 }
 
 input {
@@ -108,6 +165,10 @@ input {
     border-radius: 5px;
 }
 
+input:hover{
+    transform: scale(1.1);
+}
+
 input[type=button] {
     background-color: #b3adcd;
     border: 0px;
@@ -117,8 +178,8 @@ input[type=button] {
     font-size: 17px;
     margin-top: 15px;
     width: 50%;
+    
 }
-
 
 header {
     position: fixed;
@@ -328,10 +389,8 @@ p {
 
 .products-container {
     position: relative;
-    width: 1200px;
+    max-width: 1200px;
     display: grid;
-    grid-template-columns: repe;
-
 }
 
 
@@ -363,29 +422,37 @@ p {
 
 
 
-
-
-
-
-
-.modal-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: fixed;
-    background-color: transparent;
-    width: 100%;
-    height: 100vh;
-    visibility: hidden;
-    transition: opacity 0.3s ease;
-    border-radius: 10px;
-    z-index: 100;
+#boton-carrito{
+    border: none;
+    color: #7763d1;
+    font-size: 40px;
+    background-color: #eee;
+    border-radius: 50%;
+    padding: 10px 20px;
+    transition: all .3s;
 }
 
-.modal-active {
+
+
+.modal-contenedor {
+    margin: auto;
+    width: 100%;
+    max-width: 700px;
+    max-height: 90%;
+    border-radius: 6px;
+    padding: 2rem 3rem;
+    display: grid;
+    gap: 1rem;
+    place-items: center;
+    position: relative;
+    
+}
+
+
+.open-carrito {
     opacity: 1;
-    visibility: visible;
-    z-index: 5;
+    pointer-events: unset;
+    
 }
 
 .modal-carrito {

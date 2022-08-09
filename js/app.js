@@ -64,10 +64,10 @@ const mostrarProductos = (productos) => {
             </div>
             <div class="price"> $ ${producto.precio}</div>
             <div class="descripcion">
-                            <p>${producto.descr}</p>
-                            </div>
-                <a href="#" class="btn btn-primary" id=agregar${producto.id}> Agregar</a>
+                <p>${producto.descr}</p>
             </div>
+                
+            <button id="agregar${producto.id}" class="boton-agregar">Agregar <i class="fas fa-shopping-cart"></i></button>
         </div>
         `
     
@@ -80,15 +80,13 @@ const mostrarProductos = (productos) => {
             Swal.fire({
                 title: 'Seguro quieres agregar este articulo?',
                 showDenyButton: true,
-                showCancelButton: true,
                 confirmButtonText: 'Agregar',
-                denyButtonText: `No agregar`,
               }).then((result) => {
                 /* Read more about isConfirmed, isDenied below */
                 if (result.isConfirmed) {
                   Swal.fire('Guardado!', '', 'success')
                 } else if (result.isDenied) {
-                  Swal.fire('No se añadio al carrito', '', 'info')
+                  Swal.fire('No se añadio al carrito', '')
                 }
               })
         } )
@@ -100,6 +98,20 @@ const mostrarProductos = (productos) => {
 const agregarAlcarrito = (prodId) => {
     const item = productos.find((prod) => prod.id === prodId)
     carritoIndex.push(item)
+    actualizarCarrito()
+    console.log(carritoIndex)
+}
+
+const actualizarCarrito = () =>{
+    carritoIndex.forEach((prod) => {
+        const div = document.createElement('div')
+        div.className = ('productoEnCarrito')
+        div.innerHTML = `
+        <p>${prod.nombre}</p>
+        <p>Precio: ${prod.precio}</p>
+        <p>Cantidad: <span id="cantidad">${prod.cantidad}</span></p>
+        `
+    })
 }
 
 mostrarProductos(productos)
