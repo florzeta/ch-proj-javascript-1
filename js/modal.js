@@ -4,13 +4,12 @@ const modal = document.querySelector('.modal');
 
 const closeModal = document.querySelector('.modal_close');
 
-const modalContenedor = document.querySelector('.modal_container');
+const openCarrito = document.querySelector('.open-carrito');
 
-const abrirCarrito = document.getElementById('open-carrito');
+const modalCarrito= document.querySelector('.modal-container-carrito');
 
-const cerrarCarrito = document.getElementById('cerrar');
+const cerrarCarrito = document.querySelector('.closeCarrito');
 
-const modalCarrito = document.querySelector('.modal-carrito');
 
 
 
@@ -25,16 +24,14 @@ closeModal.addEventListener('click', (e)=>{
 });
 
 
-abrirCarrito.addEventListener('click', ()=>{
-    modalContenedor.classList.toggle('open-carrito');
+openCarrito.addEventListener('click', (e)=>{
+    e.preventDefault();
+    modalCarrito.classList.add('modal-carrito-show');
 });
 
-cerrarCarrito.addEventListener('click', ()=>{
-    modalContenedor.classList.remove('open-carrito');
-});
-
-modalContenedor.addEventListener('click',() =>{
-    cerrarCarrito.click();
+cerrarCarrito.addEventListener('click', (e)=>{
+    e.preventDefault();
+    modalCarrito.classList.remove('modal-carrito-show');
 });
 
 

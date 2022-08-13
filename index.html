@@ -69,19 +69,19 @@
         <main>
             <section class="modal modal-show">
                 <div class="modal_container">
-                    <form>
+                    <form id="datosRegistro">
                         <i class="fa-solid fa-xmark modal_close" id="close"></i>
                         <h1>Registrate para ingresar...</h1>
                         <div class="medio">
-                            <input type="text" id="nombre" placeholder="Nombre" />
-                            <input type="text" id="apellido" placeholder="apellido" />
+                            <input type="text" id="nombre" placeholder="Nombre" class="nombre" />
+                            <input type="text" id="apellido" placeholder="apellido" class="apellido" />
                         </div>
                         <div class="completo">
-                            <input type="email" id="email" placeholder="email" />
-                            <input type="password" id="pass" placeholder="Password" />
+                            <input type="email" id="email" placeholder="email" class="email" />
+                            <input type="password" id="pass" placeholder="Password" class="password" />
                         </div>
-                        <div class="botonRegistro completo">
-                            <input type="button" value="Enviar" />
+                        <div class="completo">
+                            <input type="button" class="botonRegistro text-align-center" value="Enviar" />
                         </div>
                     </form>
                 </div>
@@ -239,27 +239,33 @@
 
             </section>
             <h1 class="heading">Nuestros <span>productos</span></h1>
-            <section class="products-container">
+            <section class="products-container" id="products-cards">
 
 
                 <div class="container-product" id="producto-contenedor">
 
 
                 </div>
-    </div>
-    </section>
- 
-    
-        <div class="modal_container">
-            <div class="modal-carrito">
-                <h3>Carrito</h3>
-                <button id="cerrar"><i class="fa-solid fa-xmark modal_close"></i></button>
-                <div id="carrito-contenedor"></div>
-            </div>    
-        </div>
-    
 
-        <!--<section class="main-form">
+            </section>
+
+
+            <div class="modal-container-carrito modal-carrito-show">
+                <div class="modal_container">
+                    <div class="carrito-contenedor">
+                        <i class="fa-solid fa-xmark closeCarrito" id="close"></i>
+                        <h3>Carrito</h3>
+                        
+                        <ul id="carrito"></ul>
+                        <hr>
+                        <p class="text-right">Total: $ </p>
+                        <button id="boton-vaciar" class="btn btn-danger">Vaciar</button>
+                    </div>
+                </div>
+            </div>
+
+
+            <!--<section class="main-form">
                 <div>
                     <p>Registrate a nuestro NEWSLETTER</p>
                     <p>Obtene beneficios para tu proxima compra</p>
@@ -322,13 +328,14 @@
                 </div>
             </div>
         </footer>
+    </div>
 
+    <!--<script src= "./js/stock.js" type="module"></script>-->
 
-<!--<script src= "./js/stock.js" type="module"></script>-->
-
-<script src="./js/app.js" type="module"></script>
-<script src="./js/stock.js" type="module"></script>
-<script src="./js/modal.js"></script>
-<script src="./js/carritoIndex.js" type="module"></script>
+    <script src="./js/app.js" type="module"></script>
+    <script src="./js/stock.js" type="module"></script>
+    <script src="./js/modal.js"></script>
+    <script src="./js/carritoIndex.js" type="module"></script>
 </body>
+
 </html>

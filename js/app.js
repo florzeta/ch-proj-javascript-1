@@ -1,6 +1,27 @@
-import { productos } from "./stock.js" 
+import { productos } from "./stock.js"; 
 import { carritoIndex } from "./carritoIndex.js";
 
+
+class Producto {
+    constructor(id,nombre,img,precio,descripcion){
+    this.id = id;
+    this.nombre = nombre;
+    this.img = img;
+    this.precio = precio;
+    this.descripcion = descripcion;
+    this.cantidad = 0;
+    }
+}
+
+
+async function imprimirProductos(){
+    fetch('./data/stock.json')
+        .then((response) => response.json())
+        .then((data) => {
+            console.log(data.productos);
+            mostrarProductos(data.productos);
+        })
+}
 
 let main = function(){
     datosRegistro();
@@ -9,6 +30,7 @@ let main = function(){
 let datosRegistro = function(){
     document.querySelector("botonRegistro").setAttribute("onclick", "dataRead()");
 }
+
 
 let dataRead = function(){
     console.log("Registrando datos del formulario");
@@ -23,7 +45,7 @@ let dataRead = function(){
         nombre : document.querySelector("#nombre").value,
         apellido : document.querySelector("#apellido").value,
         email : document.querySelector("#email").value,
-        password : document.querySelector("#pass").value
+        password : document.querySelector("#pass").value,
     };
 
     console.log(usuarioCreado);
@@ -50,7 +72,7 @@ const mostrarProductos = (productos) => {
     const contenedorProductos = document.getElementById('producto-contenedor')
     const contenedorCarrito = document.getElementById('carrito-contenedor')
 
-    productos.forEach(producto => {
+    productos.forEach((producto) => {
         const div = document.createElement('div')
         div.classList.add('card')
         div.innerHTML +=  `
@@ -113,6 +135,7 @@ const actualizarCarrito = () =>{
         `
     })
 }
+let dataProductos = imprimirProductos();
+// mostrarProductos(productos);
 
-mostrarProductos(productos)
 
