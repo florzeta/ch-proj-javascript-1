@@ -1,7 +1,5 @@
-{
-    "productos": [
-
-        {
+[      
+    {
         "id": "1",
         "img": "https://i.ibb.co/4pHrRyM/pexels-ready-made-3850460.jpg",
         "nombre": "Bolsa de Macrame",
@@ -98,4 +96,3 @@
         "cantidad": "1"
         }
     ]
-}

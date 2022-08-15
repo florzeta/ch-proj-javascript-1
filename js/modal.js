@@ -11,8 +11,6 @@ const modalCarrito= document.querySelector('.modal-container-carrito');
 const cerrarCarrito = document.querySelector('.closeCarrito');
 
 
-
-
 openModal.addEventListener('click', (e)=>{
     e.preventDefault();
     modal.classList.add('modal-show');
@@ -23,7 +21,6 @@ closeModal.addEventListener('click', (e)=>{
     modal.classList.remove('modal-show');
 });
 
-
 openCarrito.addEventListener('click', (e)=>{
     e.preventDefault();
     modalCarrito.classList.add('modal-carrito-show');
@@ -32,9 +29,4 @@ openCarrito.addEventListener('click', (e)=>{
 cerrarCarrito.addEventListener('click', (e)=>{
     e.preventDefault();
     modalCarrito.classList.remove('modal-carrito-show');
-});
-
-
-modalCarrito.addEventListener('click', (e) =>{
-    e.stopPropagation();
 });
